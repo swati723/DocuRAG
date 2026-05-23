@@ -20,6 +20,7 @@ st.set_page_config(
 if "role" not in st.session_state:
     st.session_state.role = None
 
+# ================= LOGIN PAGE =================
 if st.session_state.role is None:
 
     st.title("🔐 Academic RAG Login")
@@ -31,21 +32,26 @@ if st.session_state.role is None:
 
     if st.button("Login"):
 
-        if selected_role == "Admin" and email == "admin@gmail.com" and password == "admin123":
-            st.session_state.role = "admin"
-            st.rerun()
+        if selected_role == "Admin":
 
-        elif selected_role == "Student" and email != "":
-            st.session_state.role = "student"
-            st.rerun()
+            if verify_admin(email, password):
+                st.session_state.role = "admin"
+                st.success("Admin login successful")
+                st.rerun()
 
-        else:
-            st.error("Invalid credentials")
+            else:
+                st.error("Invalid admin credentials")
 
-    st.stop()
+        elif selected_role == "Student":
 
+            if email.strip() != "":
+                st.session_state.role = "student"
+                st.rerun()
+            else:
+                st.error("Enter email for student login")
+
+# ================= AFTER LOGIN =================
 role = st.session_state.role
-
 # ==========================================================
 # PAGE CONFIG
 # ==========================================================
