@@ -8,6 +8,11 @@ from rag_engine import RAGEngine
 from PIL import Image
 import io
 
+st.set_page_config(
+    page_title="Academic RAG Agent",
+    page_icon="🎓",
+    layout="wide"
+)
 # ==========================================================
 # LOGIN SYSTEM (ADDED - SAFE)
 # ==========================================================
@@ -45,11 +50,6 @@ role = st.session_state.role
 # PAGE CONFIG
 # ==========================================================
 
-st.set_page_config(
-    page_title="Academic RAG Agent",
-    page_icon="🎓",
-    layout="wide"
-)
 
 # ==========================================================
 # SAFE UI STYLING

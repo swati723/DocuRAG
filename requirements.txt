@@ -1,0 +1,16 @@
+streamlit
+pandas
+supabase
+python-dotenv
+requests
+pdfplumber
+python-docx
+sentence-transformers
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+pillow
+pytesseract
+scikit-learn
+numpy

@@ -22,7 +22,6 @@ import pytesseract
 from PIL import Image
 import io
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 from docx import Document as DocxDocument
 
@@ -36,6 +35,14 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from sentence_transformers import SentenceTransformer
 
 warnings.filterwarnings("ignore")
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+pytesseract.pytesseract.tesseract_cmd = os.path.join(
+    BASE_DIR,
+    "tesseract",
+    "tesseract.exe"
+)
 
 # ============================================================
 # ENV
