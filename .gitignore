@@ -1,4 +1,8 @@
 venv/
-.env
+build/
+dist/
 __pycache__/
 *.pyc
+.env
+*.exe
+localpycs/
