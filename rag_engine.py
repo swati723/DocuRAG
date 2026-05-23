@@ -31,7 +31,7 @@ from dotenv import load_dotenv
 from supabase import create_client
 
 from langchain_core.documents import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from sentence_transformers import SentenceTransformer
 
 warnings.filterwarnings("ignore")
